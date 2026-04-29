@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI-Based Student Learning Analyzer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Learning Analyzer</h1>
+
+    <form id="student-form">
+      <label>
+        Student Name
+        <input type="text" required name="studentName" placeholder="Enter student name">
+      </label>
+
+      <label>
+        Enrollment Number
+        <input type="text" required name="enrollment" placeholder="e.g. 22BCS1234">
+      </label>
+
+      <label>
+        Attendance (%)
+        <input type="number" min="0" max="100" step="1" required name="attendance">
+      </label>
+
+      <label>
+        Assignment Submission (%)
+        <input type="number" min="0" max="100" step="1" required name="assignment">
+      </label>
+
+      <label>
+        TDP Grade (0-10)
+        <input type="number" min="0" max="10" step="0.1" required name="tdp">
+      </label>
+
+      <label>
+        Consistency (0-10)
+        <input type="number" min="0" max="100" step="0.1" required name="consistency">
+      </label>
+
+      <label>
+        Extra-curricular Participation (0-10)
+        <input type="number" min="0" max="10" step="1" required name="extra">
+      </label>
+
+      <label>
+        Mid-term Performance (%)
+        <input type="number" min="0" max="100" step="1" required name="midterm">
+      </label>
+
+      <label>
+        Quiz Average (%)
+        <input type="number" min="0" max="100" step="1" required name="quiz">
+      </label>
+
+      <label>
+        Lab Work Completion (%)
+        <input type="number" min="0" max="100" step="1" required name="lab">
+      </label>
+
+      <label>
+        End-term Performance (%)
+        <input type="number" min="0" max="100" step="1" required name="endterm">
+      </label>
+
+      <button type="submit">Analyze Student</button>
+    </form>
+
+    <div id="result" style="display:none;">
+      <h2>Analysis Result</h2>
+      <p id="learner-type"></p>
+      <div id="recommendations"></div>
+    </div>
+
+    <!-- Dashboard Start -->
+    <div id="dashboard" style="display:none;">
+      <h2>Dashboard</h2>
+
+      <div class="dashboard-row">
+        <div class="dashboard-card">
+          <h3>Total Students</h3>
+          <div id="total-students">0</div>
+        </div>
+        <div class="dashboard-card">
+          <h3>Slow Learners</h3>
+          <div id="slow-count">0</div>
+        </div>
+        <div class="dashboard-card">
+          <h3>Moderate Learners</h3>
+          <div id="moderate-count">0</div>
+        </div>
+        <div class="dashboard-card">
+          <h3>Fast Learners</h3>
+          <div id="fast-count">0</div>
+        </div>
+      </div>
+
+      <div id="students-table-wrap">
+        <h3>Student Records</h3>
+        <table id="students-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Enrollment No.</th>
+              <th>Attendance</th>
+              <th>Assignments</th>
+              <th>TDP</th>
+              <th>Consistency</th>
+              <th>Extra Curricular</th>
+              <th>Mid-term</th>
+              <th>Quiz</th>
+              <th>Lab</th>
+              <th>End-term</th>
+              <th>Learner Type</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Dashboard End -->
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
