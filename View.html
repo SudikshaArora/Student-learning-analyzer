@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI-Based Student Learning Analyzer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Learning Analyzer</h1>
+    <form id="student-form">
+      <label>Attendance (%) <input type="number" min="0" max="100" step="1" required name="attendance"></label>
+      <label>Assignment Submission (%) <input type="number" min="0" max="100" step="1" required name="assignment"></label>
+      <label>TDP Grade (0-10) <input type="number" min="0" max="10" step="0.1" required name="tdp"></label>
+      <label>Consistency (Std Dev of last 5 scores, lower=better) <input type="number" min="0" max="100" step="0.1" required name="consistency"></label>
+      <label>Extra-curricular Participation (Count) <input type="number" min="0" max="10" step="1" required name="extra"></label>
+      <label>Mid-term Performance (%) <input type="number" min="0" max="100" step="1" required name="midterm"></label>
+      <label>Quiz Average (%) <input type="number" min="0" max="100" step="1" required name="quiz"></label>
+      <label>Lab Work Completion (%) <input type="number" min="0" max="100" step="1" required name="lab"></label>
+      <label>End-term Performance (%) <input type="number" min="0" max="100" step="1" required name="endterm"></label>
+      <button type="submit">Analyze Student</button>
+    </form>
+    <div id="result" style="display:none;">
+      <h2>Analysis Result</h2>
+      <p id="learner-type"></p>
+      <div id="recommendations"></div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
